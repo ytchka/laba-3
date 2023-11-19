@@ -1,0 +1,254 @@
+#include <iostream>
+#include <random>
+#include <cmath>
+#include <vector>
+#include <string>
+using namespace std;
+void zadanie2();
+void zadanie3();
+void zadanie4();
+void zadanie5();
+void zadanie6();
+void zadanie7();
+void zadanie8();
+void zadanie9();
+void zadanie10();
+int main()
+{
+	int a = 0;
+	cin >> a;
+	double arr[10] = { };
+	for (int i = 0; i < 10; ++i) {
+		arr[i] = rand() % 10000;
+	}
+	for (int i = 0; i < 10; ++i) {
+		arr[i] = (arr[i] * 2 - a) / arr[0];
+		cout << arr[i] << endl;
+	}
+	return 0;
+	zadanie2();
+	zadanie3();
+	zadanie4();
+	zadanie5();
+	zadanie6();
+	zadanie7();
+	zadanie8();
+	zadanie9();
+	zadanie10();
+}
+void zadanie2()
+{
+	int sum = 0;
+	int s2 = 0;
+	int s3 = 0;
+	int k1 = 0;
+	int k2 = 0;
+	int s4 = 0;
+	int s5 = 0;
+	int s6 = 0;
+	int s11 = 0;
+	int s21 = 0;
+	cin >> k1 >> k2;
+	cin >> s11 >> s21;
+	double arr[10] = { };
+	for (int i = 0; i < 10; ++i) {
+		arr[i] = rand() % 10000;
+	}
+	for (int i = 0; i < 10; ++i) {
+		sum += arr[i];
+	}
+	cout << sum << endl;
+	for (int i = 0; i < 10; ++i) {
+		s2 += arr[i] * arr[i];
+	}
+	cout << s2 << endl;
+	for (int i = 0; i < 10; ++i) {
+		s3 += arr[6];
+	}
+	cout << s3 << endl;
+	for (int i = k1; i < k2; ++i) {
+		s4 += arr[i];
+	}
+	cout << s4 << endl;
+	for (int i = 0; i < 10; ++i) {
+		s5 += arr[i] / 10;
+	}
+	cout << s5 << endl;
+	for (int i = s11; i < s21; ++i) {
+		s6 += arr[i] / 10;
+	}
+	cout << s6 << endl;
+}
+void zadanie3()
+{
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int d = 0;
+	int e = 0;
+	int f = 0;
+	double arr[20] = {};
+	for (int i = 0; i < 20; ++i) {
+		arr[i] = rand() % 10000;
+	}
+	for (int i = 0; i < 20; ++i) {
+		arr[0] = a;
+		arr[1] = b;
+		arr[2] = c;
+		arr[17] = d;
+		arr[18] = e;
+		arr[19] = f;
+		a = f;
+		b = e;
+		c = d;
+		arr[0] = f;
+		arr[1] = e;
+		arr[2] = d;
+		arr[17] = c;
+		arr[18] = b;
+		arr[19] = a;
+		cout << arr[i] << endl;
+	}
+}
+void zadanie4()
+{
+	{
+		vector<int> mas2 = { 1,2,3,-4,5,6,-7,8,9,11 };
+		for (int i = 0; i < mas2.size(); ++i) {
+			if (mas2[i] < 0) {
+				mas2.erase(mas2.cbegin() + i);
+				break;
+			}
+		}
+		int kk = 0;
+		for (int i = mas2.size() - 1; i > 0; i -= 1) {
+			kk += 1;
+			if (mas2[i] % 2 == 0) {
+				mas2.erase(mas2.cend() - kk);
+				break;
+			}
+		}
+		for (int i = 0; i < mas2.size(); i++) {
+			cout << mas2[i] << " ";
+		}
+	}
+}
+void zadanie5()
+{
+	string city;
+	cout << "city ";
+	cin >> city;
+	if (city.length() % 2 == 0) {
+		cout << "kolichestvo simvolov chetno";
+	}
+	else {
+		cout << "kolichestvo simvolov nechetno" << endl;
+	}
+}
+void zadanie6()
+{
+	string f1;// 1 фамилия
+	string f2;// 2 фамилия
+	cout << "f1 ";
+	cin >> f1;
+	cout << "f2 ";
+	cin >> f2;
+	if (f1.length() > f2.length()) {
+		cout << "true" << endl;
+	}
+	else {
+		cout << "false" << endl;
+	}
+}
+void zadanie7()
+{
+	string city1;
+	cout << "city1 ";//1 gorod
+	cin >> city1;
+	string city2;//2 gorod
+	cout << "city2 ";
+	cin >> city2;
+	string city3;//3 gorod
+	cout << "city3 ";
+	cin >> city3;
+	if (city1.length() > city2.length())
+	{
+		if (city1.length() > city3.length()) {
+			cout << "the_longest" << city1 << endl;
+		}
+		else {
+			cout << "the_longest" << city3 << endl;
+		}
+	}
+	else
+	{
+		if (city2.length() > city3.length()) {
+			cout << "the_longest" << city2 << endl;
+		}
+		else {
+			cout << "the_longest" << city3 << endl;
+		}
+	}
+
+	if (city1.length() < city2.length())
+	{
+		if (city1.length() < city3.length()) {
+			cout << "the_shortest" << city1 << endl;
+		}
+		else {
+			cout << "the_shortest" << city3 << endl;
+		}
+	}
+	else
+	{
+		if (city2.length() < city3.length()) {
+			cout << "the_shortest" << city2 << endl;
+		}
+		else {
+			cout << "the_shortest" << city3 << endl;
+		}
+	}
+}
+void zadanie8()
+{
+	string word;
+	cout << "Word:";
+	cin >> word;
+	for (int i = 0; i < word.length(); ++i) {
+		cout << "*";
+	}
+	cout << word;
+	for (int i = word.length(); i < 2 * word.length(); ++i) {
+		cout << "*";
+	}
+}
+void zadanie9()
+{
+		string pr;
+		cin.ignore();
+		getline(cin, pr);
+		double s = pr.length();
+		double a = 0;
+		cout << s << endl;
+		for (int i = 0; i < s; ++i) {
+			if (pr[i] == 'a') {
+				a = a + 1;
+			}
+		}
+		double p;
+		p = (a * 100 / s);
+		cout << "p=" << p << '%';
+	
+}
+void zadanie10()
+{
+	string pr{ "can you can a can as a canner can can a can?" };
+	string old_w{ "can" };//старое слово
+	string new_w{ "new_word" };//новое  слово
+	size_t start{ pr.find(old_w) };//находим позицию подстроки
+	while (start != string::npos) {// находим и заменяем все вхождения old_w на new_w
+		pr.replace(start, old_w.length(), new_w);
+		start = pr.find(old_w, start + new_w.length());
+	}
+	cout << pr;
+}
